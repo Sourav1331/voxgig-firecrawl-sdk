@@ -51,7 +51,7 @@ Key fields to recognise:
 - `allowExternalLinks`: Allows the crawler to follow links to external websites.
 - `allowSubdomains`: Allows the crawler to follow links to subdomains of the main domain.
 - `completed`: The number of pages that have been successfully crawled.
-- `crawlEntireDomain`: Allows the crawler to follow internal links to sibling or parent URLs, not just child paths.
+- `crawlEntireDomain`: Allows the crawler to follow internal links to sibling or parent URLs rather than only child paths.
 - `creditsUsed`: The number of credits used for the crawl.
 
 ### CrawlErrorsResponseObj

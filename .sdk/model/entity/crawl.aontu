@@ -30,7 +30,7 @@ main: kit: entity: crawl: {
       h: "Crawl Entire Domain"
       n: "crawlEntireDomain"
       r: false
-      sh: "Allows the crawler to follow internal links to sibling or parent URLs, not just child paths."
+      sh: "Allows the crawler to follow internal links to sibling or parent URLs rather than only child paths."
       t: "`$BOOLEAN`"
     }
     creditsUsed: {
