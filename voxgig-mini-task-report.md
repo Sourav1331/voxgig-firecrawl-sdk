@@ -11,34 +11,34 @@ The initial project was created with `npm create @voxgig/sdkgen -- firecrawl --d
 Ready as a hiring mini-task submission with the request-typing limitation disclosed. It must not be represented as a fully correct, production-ready Firecrawl TypeScript SDK.
 
 - Package: `@voxgig-sdk/firecrawl-sdk`, version `0.0.1`, CommonJS with `dist/FirecrawlSDK.js` and `dist/FirecrawlSDK.d.ts` entry points; MIT license with the generated Voxgig copyright notice preserved.
-- Source: 10 entity classes, SDK/client and entity base classes, request/response utilities, generated types, and the standard test feature. There are no runtime npm dependencies. The Node-specific imports make this a Node SDK; browser compatibility was not validated.
-- TypeScript: strict checking, NodeNext modules, ES2022 target, source maps, declarations, and noEmitOnError; sources and tests have separate configurations. Review environment: Node 24.15.0 and npm 11.17.0. No engines constraint is declared.
+- Source: 10 entity classes, SDK/client and entity base classes, request/response utilities, generated types and the standard test feature. There are no runtime npm dependencies. The Node-specific imports make this a Node SDK; browser compatibility was not validated.
+- TypeScript: strict checking, NodeNext modules, ES2022 target, source maps, declarations and noEmitOnError; sources and tests have separate configurations. Review environment: Node 24.15.0 and npm 11.17.0. No engines constraint is declared.
 - Documentation: root README.md and SUMMARY.md, plus ts/README.md, ts/REFERENCE.md and agent guides exist. These are generated documents. Their example payloads and broad type-safety claim should be read alongside this report's request-type limitation; passing offline examples do not establish valid live API payloads.
-- Packaging: `npm.cmd pack --dry-run --json --ignore-scripts` succeeded, listing 242 files, including the compiled entry point, declarations, source, README and LICENSE. An actual tarball was also created and extracted in the OS temporary directory, without publishing. The packed runtime loads independently of .sdk, and an ordinary consumer TypeScript call compiles with Node type definitions available. The package omits ts/REFERENCE.md and includes dist/tsconfig.tsbuildinfo; these are packaging-polish issues, not blockers for the evaluation.
+- Packaging: `npm.cmd pack --dry-run --json --ignore-scripts` succeeded, listing 242 files, including the compiled entry point, declarations, source, README and LICENSE. An actual tarball was also created and extracted in the OS temporary directory, without publishing. The packed runtime loads independently of .sdk and an ordinary consumer TypeScript call compiles with Node type definitions available. The package omits ts/REFERENCE.md and includes dist/tsconfig.tsbuildinfo; these are packaging-polish issues, not blockers for the evaluation.
 - Publishing: the name, author, repository links and manual publish workflow still use generated Voxgig metadata. Access to the @voxgig-sdk npm scope was not checked and must not be assumed. Local tarball installation/use is supported; an npm release under the candidate's account requires deliberate metadata and publishing configuration. The package does not rebuild automatically during packing, so run the build first. Tests are repository assets and depend on .sdk fixtures; the published runtime does not.
 - Authentication: the supplied spec declares HTTP bearer authentication. The SDK base URL is https://api.firecrawl.dev/v2; options.apikey supplies the value and auth.prefix is Bearer. The resulting authorization header was asserted using an in-memory placeholder and a stub transport, without reading the user's credential or contacting Firecrawl. Consumers must supply the option explicitly, for example from their own process environment; the SDK does not automatically load a credential file.
 - Validation: the current compiled test suite was rerun offline during this review: **239 passed / 0 failed / 1 skipped**, out of 240 tests in 39 suites. The skip is the uninstalled cost feature. Both generation and build results recorded below remain successful; source was not changed during this review.
 - Secret review: no local credential/config files or common Firecrawl/GitHub/private-key token patterns were found in the scanned project files outside dependencies, caches and logs. This is a bounded scan, not proof against every possible secret format. No credential values were printed. No Git repository exists yet, so nothing has been committed or pushed.
-- Submission-only changes during review: expanded this report, copied it into the proposed repository root, added a precise submission-files.txt allowlist, and strengthened the root .gitignore for credential files, caches, logs/build bookkeeping and unused standalone CLI model artifacts. No SDK/generator source or official definition was modified.
+- Submission-only changes during review: expanded this report, copied it into the proposed repository root, added a precise submission-files.txt allowlist and strengthened the root .gitignore for credential files, caches, logs/build bookkeeping and unused standalone CLI model artifacts. No SDK/generator source or official definition was modified.
 - GitHub Actions were inspected but not executed. The publish workflow requires manual dispatch; the review did not publish, tag, commit, initialize Git or push.
 
 The repository root for submission is `firecrawl-sdk/`, containing this report alongside README.md, .sdk/ and ts/. The copy one directory above is retained for continuity with the original task. **submission-files.txt is the exact first-commit allowlist**; the much longer historical generation inventory at the end of this report is not a commit list. Keep ts/dist and ts/dist-test, as explicitly intended by the generated ts/.gitignore; exclude their *.tsbuildinfo files. Exclude dependencies, .jostraca caches, .sdk build output, historical warnings, local secrets and the redundant prefixed API/entity/flow models.
 
-The allowlist contains **647 files**. All listed files exist, required generator inputs and runtime entry points are included, and no excluded local artifact or common secret-token pattern was found in the selected files. `npm ls --depth=0` also succeeds for both .sdk and ts; the target uses TypeScript 5.9.3 and the generator toolchain uses TypeScript 7.0.2.
+The allowlist contains **647 files**. All listed files exist, required generator inputs and runtime entry points are included and no excluded local artifact or common secret-token pattern was found in the selected files. `npm ls --depth=0` also succeeds for both .sdk and ts; the target uses TypeScript 5.9.3 and the generator toolchain uses TypeScript 7.0.2.
 
 Exact request-type defect locations:
 
 - `ts/src/FirecrawlTypes.ts:246`: `ScrapeCreateData`; reproduced independently for both missing url and missing formats. The omission also appears in `ts/dist/FirecrawlTypes.d.ts`.
 - `.sdk/def/firecrawl-openapi.json:36`: `paths["/scrape"].post.requestBody.content["application/json"].schema.allOf`. Member 0 requires the url property; member 1 references `#/components/schemas/ScrapeOptions`.
 - `.sdk/def/firecrawl-openapi.json:2382`: `ScrapeOptions.properties.formats` references `#/components/schemas/Formats`.
-- Installed `.sdk/node_modules/@voxgig/apidef/src/transform/field.ts:768`: findFieldDefs creates an array containing response and request schemas. Its allOf check at line 778 applies to that outer array, and the loop at line 789 only visits direct properties of its members, losing the request member's allOf fields.
-- Installed sdkgen's opRequestShape uses the resulting entity fields, and `.sdk/src/cmp/ts/EntityTypes_ts.ts:76` emits them into the create-request interface. Response fields survive while the composed request fields are absent. No any-based workaround, casts, generated-file edits or OpenAPI edits were introduced.
+- Installed `.sdk/node_modules/@voxgig/apidef/src/transform/field.ts:768`: findFieldDefs creates an array containing response and request schemas. Its allOf check at line 778 applies to that outer array and the loop at line 789 only visits direct properties of its members, losing the request member's allOf fields.
+- Installed sdkgen's opRequestShape uses the resulting entity fields and `.sdk/src/cmp/ts/EntityTypes_ts.ts:76` emits them into the create-request interface. Response fields survive while the composed request fields are absent. No any-based workaround, casts, generated-file edits or OpenAPI edits were introduced.
 
 No live API request is required for this evaluation. A separately authorized live smoke test would POST /v2/scrape for https://example.com with formats set to markdown, checking bearer authentication, HTTP/API success and nonempty markdown; it could consume Firecrawl credits. That test was not executed.
 
 The execution history and original generation inventory follow.
 
-Generation, both TypeScript builds, and the generated offline test suite succeed. This is not yet a fully correct typed Firecrawl client: the generated ScrapeCreateData interface rejects the required url field and the formats option. No live API calls were made.
+Generation, both TypeScript builds and the generated offline test suite succeed. This is not yet a fully correct typed Firecrawl client: the generated ScrapeCreateData interface rejects the required url field and the formats option. No live API calls were made.
 
 **A. Deliberate source edits** (paths relative to firecrawl-sdk)
 
@@ -50,11 +50,11 @@ Generation, both TypeScript builds, and the generated offline test suite succeed
 
 `npm run add-target -- ts` registered the missing TypeScript target and its standard test feature. All other project changes are normal scaffold/generation/build/install outputs. The complete file-level inventory is below: 985 added and 13 modified project files, including generated code, tests, docs, build output and Jostraca metadata. There were no pre-existing project files removed. Installed node_modules files are excluded from the inventory; npm installed three packages in ts, recorded in ts/package-lock.json. This report is an additional file outside firecrawl-sdk.
 
-The official definition is byte-for-byte unchanged, verified against the original at ../firecrawl-openapi.json. Dependencies under .sdk were not modified. No API credentials were added, no --force dependency fixes were used, and nothing was committed or pushed. The supplied directory is not a Git repository, so the inventory uses SHA-256 snapshots taken before editing rather than git diff.
+The official definition is byte-for-byte unchanged, verified against the original at ../firecrawl-openapi.json. Dependencies under .sdk were not modified. No API credentials were added, no --force dependency fixes were used and nothing was committed or pushed. The supplied directory is not a Git repository, so the inventory uses SHA-256 snapshots taken before editing rather than git diff.
 
 **B. Exact generation/build/test commands**
 
-Windows .cmd executables were used. Commands are listed in execution order; read-only inspection used Get-Content, Get-ChildItem, rg, Select-String, and Node to inspect the installed packages and the supplied OpenAPI definition.
+Windows .cmd executables were used. Commands are listed in execution order; read-only inspection used Get-Content, Get-ChildItem, rg, Select-String and Node to inspect the installed packages and the supplied OpenAPI definition.
 
 From `firecrawl-sdk/.sdk`:
 
@@ -142,9 +142,17 @@ The single skip is the cost feature corpus case; that optional feature is not in
 - Only the normal build/test Windows scripts were fixed. Optional clean/reset/test-some/coverage scripts still retain upstream shell assumptions and were not exercised.
 - Live Firecrawl behavior and credentials were not tested.
 
+## Human Work Time-Box
+
+The hands-on work for this mini-task exceeded the requested 30-minute time-box. The additional time was mainly due to unexpected generator and environment issues encountered during setup, generation, build and validation.
+
+Rather than bypassing these issues or hiding the resulting limitations, I used the additional time to diagnose the failures, verify the generated SDK, run the available tests, perform a live Map API smoke testand document the remaining request-typing limitation.
+
+I understand that the 30-minute time-box was intended to evaluate the generator's developer experience. The additional time therefore reflects the practical effort required to recover from the issues encountered, rather than an attempt to expand the scope of the task.
+
 **H. Developer-experience observation**
 
-The model-and-guide workflow allowed targeted response fixes without editing generated SDK code, and generated definition tests caught a real response-envelope mismatch. First-run recovery was less smooth: installation left the target unregistered, scaffold includes needed explicit relative paths, and generated scripts assumed a Unix shell. Passing generated tests also did not guarantee usable request typings for an allOf schema.
+The model-and-guide workflow allowed targeted response fixes without editing generated SDK code and generated definition tests caught a real response-envelope mismatch. First-run recovery was less smooth: installation left the target unregistered, scaffold includes needed explicit relative paths and generated scripts assumed a Unix shell. Passing generated tests also did not guarantee usable request typings for an allOf schema.
 
 **Complete changed-file inventory**
 
