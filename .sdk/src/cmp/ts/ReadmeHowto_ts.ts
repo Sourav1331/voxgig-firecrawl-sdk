@@ -30,7 +30,7 @@ const ReadmeHowto = cmp(function ReadmeHowto(props: any) {
     if (!exampleEntity || !primaryOp) return ''
     if ('list' === primaryOp) return ''
     if (isMatchOp) {
-      // Every REQUIRED match key (id first), not just idF — a composite-match
+      // Every REQUIRED match key (id first), including idF — a composite-match
       // entity (e.g. Umbrella's FlatPermission, database_id + id) needs them all
       // to satisfy the typed <Name>LoadMatch. Mirrors ReadmeTopTest.
       const items = opRequestShape(exampleEntity, primaryOp).items

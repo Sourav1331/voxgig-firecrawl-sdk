@@ -76,7 +76,7 @@ rules of physics
 quietly
 
 # --- The contrast frame and its cousins --------------------------------
-not just
+including
 not only .{0,40}\bbut\b
 it'?s not about
 the whole game

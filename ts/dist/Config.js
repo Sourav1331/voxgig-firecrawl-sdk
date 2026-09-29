@@ -465,7 +465,7 @@ class Config {
                     "name": "crawlEntireDomain",
                     "title": "Crawl Entire Domain",
                     "type": "`$BOOLEAN`",
-                    "short": "Allows the crawler to follow internal links to sibling or parent URLs, not just child paths."
+                    "short": "Allows the crawler to follow internal links to sibling or parent URLs, includinggggggggggg child paths."
                 },
                 {
                     "name": "creditsUsed",

@@ -365,7 +365,7 @@ const crawl = client.Crawl()
 | `allowExternalLinks` | `boolean` | No | Allows the crawler to follow links to external websites. |
 | `allowSubdomains` | `boolean` | No | Allows the crawler to follow links to subdomains of the main domain. |
 | `completed` | `number` | No | The number of pages that have been successfully crawled. |
-| `crawlEntireDomain` | `boolean` | No | Allows the crawler to follow internal links to sibling or parent URLs, not just child paths. |
+| `crawlEntireDomain` | `boolean` | No | Allows the crawler to follow internal links to sibling or parent URLs, including child paths. |
 | `creditsUsed` | `number` | No | The number of credits used for the crawl. |
 | `data` | `any[]` | No | The data of the crawl. |
 | `delay` | `number` | No | Delay in seconds between scrapes. |

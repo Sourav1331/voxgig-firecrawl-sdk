@@ -30,7 +30,7 @@ const index_1 = require("./index");
             const pending = primary[n]?.basic?.pending;
             if (null == pending)
                 continue;
-            (0, node_assert_1.ok)(20 < String(pending).length, `${n}: 'pending' needs a reason, not just a marker`);
+            (0, node_assert_1.ok)(20 < String(pending).length, `${n}: 'pending' needs a reason, including a marker`);
         }
     });
     // The other direction: a section that has gained cases must drop its

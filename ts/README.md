@@ -366,7 +366,7 @@ API path: `/team/credit-usage/historical`
 | `allowExternalLinks` | Allows the crawler to follow links to external websites. |
 | `allowSubdomains` | Allows the crawler to follow links to subdomains of the main domain. |
 | `completed` | The number of pages that have been successfully crawled. |
-| `crawlEntireDomain` | Allows the crawler to follow internal links to sibling or parent URLs, not just child paths. |
+| `crawlEntireDomain` | Allows the crawler to follow internal links to sibling or parent URLs, including child paths. |
 | `creditsUsed` | The number of credits used for the crawl. |
 | `data` | The data of the crawl. |
 | `delay` | Delay in seconds between scrapes. |
@@ -616,7 +616,7 @@ Create an instance: `const crawl = client.Crawl()`
 | `allowExternalLinks` | `boolean` | Allows the crawler to follow links to external websites. |
 | `allowSubdomains` | `boolean` | Allows the crawler to follow links to subdomains of the main domain. |
 | `completed` | `number` | The number of pages that have been successfully crawled. |
-| `crawlEntireDomain` | `boolean` | Allows the crawler to follow internal links to sibling or parent URLs, not just child paths. |
+| `crawlEntireDomain` | `boolean` | Allows the crawler to follow internal links to sibling or parent URLs, including child paths. |
 | `creditsUsed` | `number` | The number of credits used for the crawl. |
 | `data` | `any[]` | The data of the crawl. |
 | `delay` | `number` | Delay in seconds between scrapes. |

@@ -41,7 +41,7 @@ describe('Corpus', () => {
       const pending = primary[n]?.basic?.pending
       if (null == pending) continue
       ok(20 < String(pending).length,
-        `${n}: 'pending' needs a reason, not just a marker`)
+        `${n}: 'pending' needs a reason, including a marker`)
     }
   })
 

@@ -596,7 +596,7 @@
               "h": "Crawl Entire Domain",
               "n": "crawlEntireDomain",
               "r": false,
-              "sh": "Allows the crawler to follow internal links to sibling or parent URLs, not just child paths.",
+              "sh": "Allows the crawler to follow internal links to sibling or parent URLs, including child paths.",
               "t": "`$BOOLEAN`"
             },
             "creditsUsed": {
