@@ -1,0 +1,53 @@
+# BasicCrawlFlow
+
+main: kit: flow: BasicCrawlFlow:
+{
+  entity: "crawl",
+  kind: "basic",
+  name: "BasicCrawlFlow",
+  step: [
+    {
+      i: {
+        ref: "crawl_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "crawl_ref01",
+        srcdatavar: "crawl_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "crawl01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-crawl_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "crawl_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "crawl01"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicCrawlFlow"
+}

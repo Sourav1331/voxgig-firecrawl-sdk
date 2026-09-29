@@ -1,0 +1,40 @@
+# BasicBatchScrapeStatusResponseObjFlow
+
+main: kit: flow: BasicBatchScrapeStatusResponseObjFlow:
+{
+  entity: "batch_scrape_status_response_obj",
+  kind: "basic",
+  name: "BasicBatchScrapeStatusResponseObjFlow",
+  step: [
+    {
+      i: {
+        ref: "batch_scrape_status_response_obj_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "batch_scrape_status_response_obj_ref01",
+        srcdatavar: "batch_scrape_status_response_obj_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "batch_scrape_status_response_obj01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-batch_scrape_status_response_obj_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicBatchScrapeStatusResponseObjFlow"
+}

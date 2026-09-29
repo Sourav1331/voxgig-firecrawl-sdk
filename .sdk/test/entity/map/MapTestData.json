@@ -1,0 +1,64 @@
+{
+  "existing": {
+    "map": {
+      "MAP00": {
+        "ignoreQueryParameters": true,
+        "includeSubdomains": false,
+        "limit": 92,
+        "links": [],
+        "search": "s5e",
+        "sitemap": "s5f",
+        "success": true,
+        "timeout": 97,
+        "url": "s62",
+        "id": "MAP00"
+      },
+      "MAP01": {
+        "ignoreQueryParameters": true,
+        "includeSubdomains": false,
+        "limit": 182,
+        "links": [],
+        "search": "sb8",
+        "sitemap": "sb9",
+        "success": true,
+        "timeout": 187,
+        "url": "sbc",
+        "id": "MAP01"
+      },
+      "MAP02": {
+        "ignoreQueryParameters": true,
+        "includeSubdomains": false,
+        "limit": 272,
+        "links": [],
+        "search": "s112",
+        "sitemap": "s113",
+        "success": true,
+        "timeout": 277,
+        "url": "s116",
+        "id": "MAP02"
+      }
+    }
+  },
+  "new": {
+    "map": {
+      "map_ref01": {
+        "ignoreQueryParameters": true,
+        "includeSubdomains": false,
+        "limit": 362,
+        "links": [],
+        "search": "s16c",
+        "sitemap": "s16d",
+        "success": true,
+        "timeout": 367,
+        "url": "s170"
+      }
+    }
+  },
+  "requests": {
+    "POST /map": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

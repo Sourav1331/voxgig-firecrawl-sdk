@@ -1,0 +1,87 @@
+{
+  "existing": {
+    "billing": {
+      "BILLING00": {
+        "apiKey": "s6e",
+        "billingPeriodEnd": "s6f",
+        "billingPeriodStart": "s70",
+        "endDate": "s71",
+        "planCredits": 114,
+        "planTokens": 115,
+        "remainingCredits": 116,
+        "remainingTokens": 117,
+        "startDate": "s76",
+        "totalCredits": 119,
+        "totalTokens": 120,
+        "id": "BILLING00"
+      },
+      "BILLING01": {
+        "apiKey": "sdc",
+        "billingPeriodEnd": "sdd",
+        "billingPeriodStart": "sde",
+        "endDate": "sdf",
+        "planCredits": 224,
+        "planTokens": 225,
+        "remainingCredits": 226,
+        "remainingTokens": 227,
+        "startDate": "se4",
+        "totalCredits": 229,
+        "totalTokens": 230,
+        "id": "BILLING01"
+      },
+      "BILLING02": {
+        "apiKey": "s14a",
+        "billingPeriodEnd": "s14b",
+        "billingPeriodStart": "s14c",
+        "endDate": "s14d",
+        "planCredits": 334,
+        "planTokens": 335,
+        "remainingCredits": 336,
+        "remainingTokens": 337,
+        "startDate": "s152",
+        "totalCredits": 339,
+        "totalTokens": 340,
+        "id": "BILLING02"
+      }
+    }
+  },
+  "new": {
+    "billing": {
+      "billing_ref01": {
+        "apiKey": "s1b8",
+        "billingPeriodEnd": "s1b9",
+        "billingPeriodStart": "s1ba",
+        "endDate": "s1bb",
+        "planCredits": 444,
+        "planTokens": 445,
+        "remainingCredits": 446,
+        "remainingTokens": 447,
+        "startDate": "s1c0",
+        "totalCredits": 449,
+        "totalTokens": 450
+      }
+    }
+  },
+  "requests": {
+    "GET /team/credit-usage/historical": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /team/token-usage/historical": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /team/credit-usage": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /team/token-usage": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

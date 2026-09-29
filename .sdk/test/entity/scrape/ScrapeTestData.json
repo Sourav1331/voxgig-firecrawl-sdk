@@ -1,0 +1,68 @@
+{
+  "existing": {
+    "scrape": {
+      "SCRAPE00": {
+        "actions": {},
+        "changeTracking": {},
+        "html": "s66",
+        "links": [],
+        "markdown": "s68",
+        "metadata": {},
+        "rawHtml": "s6a",
+        "screenshot": "s6b",
+        "summary": "s6c",
+        "warning": "s6d",
+        "id": "SCRAPE00"
+      },
+      "SCRAPE01": {
+        "actions": {},
+        "changeTracking": {},
+        "html": "sca",
+        "links": [],
+        "markdown": "scc",
+        "metadata": {},
+        "rawHtml": "sce",
+        "screenshot": "scf",
+        "summary": "sd0",
+        "warning": "sd1",
+        "id": "SCRAPE01"
+      },
+      "SCRAPE02": {
+        "actions": {},
+        "changeTracking": {},
+        "html": "s12e",
+        "links": [],
+        "markdown": "s130",
+        "metadata": {},
+        "rawHtml": "s132",
+        "screenshot": "s133",
+        "summary": "s134",
+        "warning": "s135",
+        "id": "SCRAPE02"
+      }
+    }
+  },
+  "new": {
+    "scrape": {
+      "scrape_ref01": {
+        "actions": {},
+        "changeTracking": {},
+        "html": "s192",
+        "links": [],
+        "markdown": "s194",
+        "metadata": {},
+        "rawHtml": "s196",
+        "screenshot": "s197",
+        "summary": "s198",
+        "warning": "s199"
+      }
+    }
+  },
+  "requests": {
+    "POST /scrape": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

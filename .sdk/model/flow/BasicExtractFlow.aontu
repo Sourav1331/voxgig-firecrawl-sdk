@@ -1,0 +1,40 @@
+# BasicExtractFlow
+
+main: kit: flow: BasicExtractFlow:
+{
+  entity: "extract",
+  kind: "basic",
+  name: "BasicExtractFlow",
+  step: [
+    {
+      i: {
+        ref: "extract_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "extract_ref01",
+        srcdatavar: "extract_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "extract01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-extract_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicExtractFlow"
+}

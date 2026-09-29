@@ -1,0 +1,12 @@
+# Entity Models
+
+@"./batch_scrape_status_response_obj.aontu"
+@"./billing.aontu"
+@"./crawl.aontu"
+@"./crawl_errors_response_obj.aontu"
+@"./crawling.aontu"
+@"./extract.aontu"
+@"./map.aontu"
+@"./scrape.aontu"
+@"./scraping.aontu"
+@"./search.aontu"

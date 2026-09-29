@@ -1,0 +1,9 @@
+# BasicScrapingFlow
+
+main: kit: flow: BasicScrapingFlow:
+{
+  entity: "scraping",
+  kind: "basic",
+  name: "BasicScrapingFlow",
+  "key$": "BasicScrapingFlow"
+}

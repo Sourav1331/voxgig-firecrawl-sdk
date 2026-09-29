@@ -1,0 +1,93 @@
+{
+  "existing": {
+    "extract": {
+      "EXTRACT00": {
+        "data": {},
+        "enableWebSearch": false,
+        "expiresAt": "sa2",
+        "id": "EXTRACT00",
+        "ignoreInvalidURLs": true,
+        "ignoreSitemap": false,
+        "includeSubdomains": true,
+        "invalidURLs": [],
+        "prompt": "sa8",
+        "schema": {},
+        "scrapeOptions": {},
+        "showSources": false,
+        "status": "sac",
+        "success": false,
+        "tokensUsed": 174,
+        "urls": []
+      },
+      "EXTRACT01": {
+        "data": {},
+        "enableWebSearch": false,
+        "expiresAt": "s142",
+        "id": "EXTRACT01",
+        "ignoreInvalidURLs": true,
+        "ignoreSitemap": false,
+        "includeSubdomains": true,
+        "invalidURLs": [],
+        "prompt": "s148",
+        "schema": {},
+        "scrapeOptions": {},
+        "showSources": false,
+        "status": "s14c",
+        "success": false,
+        "tokensUsed": 334,
+        "urls": []
+      },
+      "EXTRACT02": {
+        "data": {},
+        "enableWebSearch": false,
+        "expiresAt": "s1e2",
+        "id": "EXTRACT02",
+        "ignoreInvalidURLs": true,
+        "ignoreSitemap": false,
+        "includeSubdomains": true,
+        "invalidURLs": [],
+        "prompt": "s1e8",
+        "schema": {},
+        "scrapeOptions": {},
+        "showSources": false,
+        "status": "s1ec",
+        "success": false,
+        "tokensUsed": 494,
+        "urls": []
+      }
+    }
+  },
+  "new": {
+    "extract": {
+      "extract_ref01": {
+        "data": {},
+        "enableWebSearch": false,
+        "expiresAt": "s282",
+        "ignoreInvalidURLs": true,
+        "ignoreSitemap": false,
+        "includeSubdomains": true,
+        "invalidURLs": [],
+        "prompt": "s288",
+        "schema": {},
+        "scrapeOptions": {},
+        "showSources": false,
+        "status": "s28c",
+        "success": false,
+        "tokensUsed": 654,
+        "urls": []
+      }
+    }
+  },
+  "requests": {
+    "POST /extract": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /extract/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

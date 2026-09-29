@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "crawling": {
+      "CRAWLING00": {
+        "id": "CRAWLING00",
+        "options": {},
+        "teamId": "s2a",
+        "url": "s2b"
+      },
+      "CRAWLING01": {
+        "id": "CRAWLING01",
+        "options": {},
+        "teamId": "s52",
+        "url": "s53"
+      },
+      "CRAWLING02": {
+        "id": "CRAWLING02",
+        "options": {},
+        "teamId": "s7a",
+        "url": "s7b"
+      }
+    }
+  },
+  "new": {
+    "crawling": {
+      "crawling_ref01": {
+        "options": {},
+        "teamId": "sa2",
+        "url": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /crawl/active": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

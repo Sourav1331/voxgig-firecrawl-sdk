@@ -1,0 +1,26 @@
+# BasicCrawlErrorsResponseObjFlow
+
+main: kit: flow: BasicCrawlErrorsResponseObjFlow:
+{
+  entity: "crawl_errors_response_obj",
+  kind: "basic",
+  name: "BasicCrawlErrorsResponseObjFlow",
+  step: [
+    {
+      m: {
+        scrape_id: "scrape01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "crawl_errors_response_obj_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCrawlErrorsResponseObjFlow"
+}

@@ -1,0 +1,134 @@
+{
+  "existing": {
+    "crawl": {
+      "CRAWL00": {
+        "allowExternalLinks": true,
+        "allowSubdomains": false,
+        "completed": 252,
+        "crawlEntireDomain": false,
+        "creditsUsed": 254,
+        "data": [],
+        "delay": 256,
+        "excludePaths": [],
+        "expiresAt": "s102",
+        "id": "CRAWL00",
+        "ignoreQueryParameters": true,
+        "includePaths": [],
+        "limit": 262,
+        "maxConcurrency": 263,
+        "maxDiscoveryDepth": 264,
+        "next": "s109",
+        "prompt": "s10a",
+        "scrapeOptions": {},
+        "sitemap": "s10c",
+        "status": "s10d",
+        "success": true,
+        "total": 271,
+        "url": "s110",
+        "webhook": {},
+        "zeroDataRetention": true
+      },
+      "CRAWL01": {
+        "allowExternalLinks": true,
+        "allowSubdomains": false,
+        "completed": 502,
+        "crawlEntireDomain": false,
+        "creditsUsed": 504,
+        "data": [],
+        "delay": 506,
+        "excludePaths": [],
+        "expiresAt": "s1fc",
+        "id": "CRAWL01",
+        "ignoreQueryParameters": true,
+        "includePaths": [],
+        "limit": 512,
+        "maxConcurrency": 513,
+        "maxDiscoveryDepth": 514,
+        "next": "s203",
+        "prompt": "s204",
+        "scrapeOptions": {},
+        "sitemap": "s206",
+        "status": "s207",
+        "success": true,
+        "total": 521,
+        "url": "s20a",
+        "webhook": {},
+        "zeroDataRetention": true
+      },
+      "CRAWL02": {
+        "allowExternalLinks": true,
+        "allowSubdomains": false,
+        "completed": 752,
+        "crawlEntireDomain": false,
+        "creditsUsed": 754,
+        "data": [],
+        "delay": 756,
+        "excludePaths": [],
+        "expiresAt": "s2f6",
+        "id": "CRAWL02",
+        "ignoreQueryParameters": true,
+        "includePaths": [],
+        "limit": 762,
+        "maxConcurrency": 763,
+        "maxDiscoveryDepth": 764,
+        "next": "s2fd",
+        "prompt": "s2fe",
+        "scrapeOptions": {},
+        "sitemap": "s300",
+        "status": "s301",
+        "success": true,
+        "total": 771,
+        "url": "s304",
+        "webhook": {},
+        "zeroDataRetention": true
+      }
+    }
+  },
+  "new": {
+    "crawl": {
+      "crawl_ref01": {
+        "allowExternalLinks": true,
+        "allowSubdomains": false,
+        "completed": 1002,
+        "crawlEntireDomain": false,
+        "creditsUsed": 1004,
+        "data": [],
+        "delay": 1006,
+        "excludePaths": [],
+        "expiresAt": "s3f0",
+        "ignoreQueryParameters": true,
+        "includePaths": [],
+        "limit": 1012,
+        "maxConcurrency": 1013,
+        "maxDiscoveryDepth": 1014,
+        "next": "s3f7",
+        "prompt": "s3f8",
+        "scrapeOptions": {},
+        "sitemap": "s3fa",
+        "status": "s3fb",
+        "success": true,
+        "total": 1021,
+        "url": "s3fe",
+        "webhook": {},
+        "zeroDataRetention": true
+      }
+    }
+  },
+  "requests": {
+    "POST /crawl": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /crawl/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /crawl/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

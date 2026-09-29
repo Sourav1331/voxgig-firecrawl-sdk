@@ -1,0 +1,22 @@
+# BasicCrawlingFlow
+
+main: kit: flow: BasicCrawlingFlow:
+{
+  entity: "crawling",
+  kind: "basic",
+  name: "BasicCrawlingFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "crawling_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCrawlingFlow"
+}

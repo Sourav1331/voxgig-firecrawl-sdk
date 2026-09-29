@@ -1,0 +1,72 @@
+{
+  "existing": {
+    "search": {
+      "SEARCH00": {
+        "data": {},
+        "ignoreInvalidURLs": false,
+        "limit": 112,
+        "location": "s71",
+        "query": "s72",
+        "scrapeOptions": "s73",
+        "sources": [],
+        "success": false,
+        "tbs": "s76",
+        "timeout": 119,
+        "warning": "s78",
+        "id": "SEARCH00"
+      },
+      "SEARCH01": {
+        "data": {},
+        "ignoreInvalidURLs": false,
+        "limit": 222,
+        "location": "sdf",
+        "query": "se0",
+        "scrapeOptions": "se1",
+        "sources": [],
+        "success": false,
+        "tbs": "se4",
+        "timeout": 229,
+        "warning": "se6",
+        "id": "SEARCH01"
+      },
+      "SEARCH02": {
+        "data": {},
+        "ignoreInvalidURLs": false,
+        "limit": 332,
+        "location": "s14d",
+        "query": "s14e",
+        "scrapeOptions": "s14f",
+        "sources": [],
+        "success": false,
+        "tbs": "s152",
+        "timeout": 339,
+        "warning": "s154",
+        "id": "SEARCH02"
+      }
+    }
+  },
+  "new": {
+    "search": {
+      "search_ref01": {
+        "data": {},
+        "ignoreInvalidURLs": false,
+        "limit": 442,
+        "location": "s1bb",
+        "query": "s1bc",
+        "scrapeOptions": "s1bd",
+        "sources": [],
+        "success": false,
+        "tbs": "s1c0",
+        "timeout": 449,
+        "warning": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "POST /search": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

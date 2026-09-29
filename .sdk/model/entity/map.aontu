@@ -1,0 +1,101 @@
+# Entity: map
+
+main: kit: entity: map: {
+
+  alias: field: {}
+
+  fields: {
+    ignoreQueryParameters: {
+      h: "Ignore Query Parameters"
+      n: "ignoreQueryParameters"
+      r: false
+      sh: "Do not return URLs with query parameters"
+      t: "`$BOOLEAN`"
+    }
+    includeSubdomains: {
+      h: "Include Subdomains"
+      n: "includeSubdomains"
+      r: false
+      sh: "Include subdomains of the website"
+      t: "`$BOOLEAN`"
+    }
+    limit: {
+      h: "Limit"
+      n: "limit"
+      r: false
+      sh: "Maximum number of links to return"
+      t: "`$INTEGER`"
+    }
+    links: {
+      h: "Links"
+      n: "links"
+      r: false
+      t: "`$ARRAY`"
+    }
+    search: {
+      h: "Search"
+      n: "search"
+      r: false
+      sh: "Search query to use for mapping."
+      t: "`$STRING`"
+    }
+    sitemap: {
+      h: "Sitemap"
+      n: "sitemap"
+      r: false
+      sh: "Sitemap mode when mapping."
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    timeout: {
+      h: "Timeout"
+      n: "timeout"
+      r: false
+      sh: "Timeout in milliseconds."
+      t: "`$INTEGER`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The base URL to start crawling from"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "map"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /map"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/map"
+          s: [
+            {
+              lit: "map"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

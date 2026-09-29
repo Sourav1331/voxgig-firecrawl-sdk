@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "crawl_errors_response_obj": {
+      "CRAWL_ERRORS_RESPONSE_OBJ00": {
+        "error": "s28",
+        "id": "CRAWL_ERRORS_RESPONSE_OBJ00",
+        "timestamp": "s2a",
+        "url": "s2b",
+        "scrape_id": "SCRAPE01"
+      },
+      "CRAWL_ERRORS_RESPONSE_OBJ01": {
+        "error": "s50",
+        "id": "CRAWL_ERRORS_RESPONSE_OBJ01",
+        "timestamp": "s52",
+        "url": "s53",
+        "scrape_id": "SCRAPE01"
+      },
+      "CRAWL_ERRORS_RESPONSE_OBJ02": {
+        "error": "s78",
+        "id": "CRAWL_ERRORS_RESPONSE_OBJ02",
+        "timestamp": "s7a",
+        "url": "s7b",
+        "scrape_id": "SCRAPE01"
+      }
+    }
+  },
+  "new": {
+    "crawl_errors_response_obj": {
+      "crawl_errors_response_obj_ref01": {
+        "error": "sa0",
+        "timestamp": "sa2",
+        "url": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /crawl/{id}/errors": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /batch/scrape/{id}/errors": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

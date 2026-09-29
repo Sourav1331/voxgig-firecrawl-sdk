@@ -1,0 +1,107 @@
+# Entity: scrape
+
+main: kit: entity: scrape: {
+
+  alias: field: {}
+
+  fields: {
+    actions: {
+      h: "Actions"
+      n: "actions"
+      r: false
+      sh: "Results of the actions specified in the `actions` parameter."
+      t: "`$OBJECT`"
+    }
+    changeTracking: {
+      h: "Change Tracking"
+      n: "changeTracking"
+      r: false
+      sh: "Change tracking information if `changeTracking` is in `formats`."
+      t: "`$OBJECT`"
+    }
+    html: {
+      h: "Html"
+      n: "html"
+      r: false
+      sh: "HTML version of the content on page if `html` is in `formats`"
+      t: "`$STRING`"
+    }
+    links: {
+      h: "Links"
+      n: "links"
+      r: false
+      sh: "List of links on the page if `links` is in `formats`"
+      t: "`$ARRAY`"
+    }
+    markdown: {
+      h: "Markdown"
+      n: "markdown"
+      r: false
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      t: "`$OBJECT`"
+    }
+    rawHtml: {
+      h: "Raw Html"
+      n: "rawHtml"
+      r: false
+      sh: "Raw HTML content of the page if `rawHtml` is in `formats`"
+      t: "`$STRING`"
+    }
+    screenshot: {
+      h: "Screenshot"
+      n: "screenshot"
+      r: false
+      sh: "Screenshot of the page if `screenshot` is in `formats`"
+      t: "`$STRING`"
+    }
+    summary: {
+      h: "Summary"
+      n: "summary"
+      r: false
+      sh: "Summary of the page if `summary` is in `formats`"
+      t: "`$STRING`"
+    }
+    warning: {
+      h: "Warning"
+      n: "warning"
+      r: false
+      sh: "Can be displayed when using LLM Extraction."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "scrape"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /scrape"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/scrape"
+          s: [
+            {
+              lit: "scrape"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,82 @@
+# Entity: crawling
+
+main: kit: entity: crawling: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "The unique identifier of the crawl"
+      t: "`$STRING`"
+    }
+    options: {
+      h: "Options"
+      n: "options"
+      r: true
+      sh: "The crawler options used for this crawl"
+      t: "`$OBJECT`"
+      union: {
+        branches: 9
+        count: 2
+        depth: 5
+      }
+    }
+    teamId: {
+      h: "Team Id"
+      n: "teamId"
+      r: true
+      sh: "The ID of the team that owns the crawl"
+      t: "`$STRING`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The origin URL of the crawl"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "crawling"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /crawl/active"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/crawl/active"
+          s: [
+            {
+              lit: "crawl"
+            }
+            {
+              lit: "active"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.crawls`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

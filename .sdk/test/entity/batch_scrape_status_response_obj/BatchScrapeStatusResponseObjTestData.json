@@ -1,0 +1,73 @@
+{
+  "existing": {
+    "batch_scrape_status_response_obj": {
+      "BATCH_SCRAPE_STATUS_RESPONSE_OBJ00": {
+        "completed": 110,
+        "creditsUsed": 111,
+        "data": [],
+        "expiresAt": "s71",
+        "id": "BATCH_SCRAPE_STATUS_RESPONSE_OBJ00",
+        "invalidURLs": [],
+        "next": "s74",
+        "status": "s75",
+        "success": true,
+        "total": 119,
+        "url": "s78"
+      },
+      "BATCH_SCRAPE_STATUS_RESPONSE_OBJ01": {
+        "completed": 220,
+        "creditsUsed": 221,
+        "data": [],
+        "expiresAt": "sdf",
+        "id": "BATCH_SCRAPE_STATUS_RESPONSE_OBJ01",
+        "invalidURLs": [],
+        "next": "se2",
+        "status": "se3",
+        "success": true,
+        "total": 229,
+        "url": "se6"
+      },
+      "BATCH_SCRAPE_STATUS_RESPONSE_OBJ02": {
+        "completed": 330,
+        "creditsUsed": 331,
+        "data": [],
+        "expiresAt": "s14d",
+        "id": "BATCH_SCRAPE_STATUS_RESPONSE_OBJ02",
+        "invalidURLs": [],
+        "next": "s150",
+        "status": "s151",
+        "success": true,
+        "total": 339,
+        "url": "s154"
+      }
+    }
+  },
+  "new": {
+    "batch_scrape_status_response_obj": {
+      "batch_scrape_status_response_obj_ref01": {
+        "completed": 440,
+        "creditsUsed": 441,
+        "data": [],
+        "expiresAt": "s1bb",
+        "invalidURLs": [],
+        "next": "s1be",
+        "status": "s1bf",
+        "success": true,
+        "total": 449,
+        "url": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "POST /batch/scrape": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /batch/scrape/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

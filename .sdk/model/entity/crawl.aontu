@@ -1,0 +1,313 @@
+# Entity: crawl
+
+main: kit: entity: crawl: {
+
+  alias: field: {}
+
+  fields: {
+    allowExternalLinks: {
+      h: "Allow External Links"
+      n: "allowExternalLinks"
+      r: false
+      sh: "Allows the crawler to follow links to external websites."
+      t: "`$BOOLEAN`"
+    }
+    allowSubdomains: {
+      h: "Allow Subdomains"
+      n: "allowSubdomains"
+      r: false
+      sh: "Allows the crawler to follow links to subdomains of the main domain."
+      t: "`$BOOLEAN`"
+    }
+    completed: {
+      h: "Completed"
+      n: "completed"
+      r: false
+      sh: "The number of pages that have been successfully crawled."
+      t: "`$INTEGER`"
+    }
+    crawlEntireDomain: {
+      h: "Crawl Entire Domain"
+      n: "crawlEntireDomain"
+      r: false
+      sh: "Allows the crawler to follow internal links to sibling or parent URLs, not just child paths."
+      t: "`$BOOLEAN`"
+    }
+    creditsUsed: {
+      h: "Credits Used"
+      n: "creditsUsed"
+      r: false
+      sh: "The number of credits used for the crawl."
+      t: "`$INTEGER`"
+    }
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      sh: "The data of the crawl."
+      t: "`$ARRAY`"
+    }
+    delay: {
+      h: "Delay"
+      n: "delay"
+      r: false
+      sh: "Delay in seconds between scrapes."
+      t: "`$NUMBER`"
+    }
+    excludePaths: {
+      h: "Exclude Paths"
+      n: "excludePaths"
+      r: false
+      sh: "URL pathname regex patterns that exclude matching URLs from the crawl."
+      t: "`$ARRAY`"
+    }
+    expiresAt: {
+      fo: "date-time"
+      h: "Expires At"
+      n: "expiresAt"
+      r: false
+      sh: "The date and time when the crawl will expire."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    ignoreQueryParameters: {
+      h: "Ignore Query Parameters"
+      n: "ignoreQueryParameters"
+      r: false
+      sh: "Do not re-scrape the same path with different (or none) query parameters"
+      t: "`$BOOLEAN`"
+    }
+    includePaths: {
+      h: "Include Paths"
+      n: "includePaths"
+      r: false
+      sh: "URL pathname regex patterns that include matching URLs in the crawl."
+      t: "`$ARRAY`"
+    }
+    limit: {
+      h: "Limit"
+      n: "limit"
+      r: false
+      sh: "Maximum number of pages to crawl."
+      t: "`$INTEGER`"
+    }
+    maxConcurrency: {
+      h: "Max Concurrency"
+      n: "maxConcurrency"
+      r: false
+      sh: "Maximum number of concurrent scrapes."
+      t: "`$INTEGER`"
+    }
+    maxDiscoveryDepth: {
+      h: "Max Discovery Depth"
+      n: "maxDiscoveryDepth"
+      r: false
+      sh: "Maximum depth to crawl based on discovery order."
+      t: "`$INTEGER`"
+    }
+    next: {
+      h: "Next"
+      n: "next"
+      r: false
+      sh: "The URL to retrieve the next 10MB of data."
+      t: "`$STRING`"
+    }
+    prompt: {
+      h: "Prompt"
+      n: "prompt"
+      r: false
+      sh: "A prompt to use to generate the crawler options (all the parameters below) from natural language."
+      t: "`$STRING`"
+    }
+    scrapeOptions: {
+      h: "Scrape Options"
+      n: "scrapeOptions"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 9
+        count: 2
+        depth: 3
+      }
+    }
+    sitemap: {
+      h: "Sitemap"
+      n: "sitemap"
+      r: false
+      sh: "Sitemap mode when crawling."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "The current status of the crawl."
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    total: {
+      h: "Total"
+      n: "total"
+      r: false
+      sh: "The total number of pages that were attempted to be crawled."
+      t: "`$INTEGER`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      sh: "The base URL to start crawling from"
+      t: "`$STRING`"
+    }
+    webhook: {
+      h: "Webhook"
+      n: "webhook"
+      r: true
+      sh: "A webhook specification object."
+      t: "`$OBJECT`"
+    }
+    zeroDataRetention: {
+      h: "Zero Data Retention"
+      n: "zeroDataRetention"
+      r: false
+      sh: "If true, this will enable zero data retention for this crawl."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "crawl"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /crawl"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/crawl"
+          s: [
+            {
+              lit: "crawl"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /crawl/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/crawl/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "crawl"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /crawl/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/crawl/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "crawl"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

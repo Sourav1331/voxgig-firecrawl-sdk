@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "scraping": {
+      "SCRAPING00": {
+        "id": "SCRAPING00"
+      },
+      "SCRAPING01": {
+        "id": "SCRAPING01"
+      },
+      "SCRAPING02": {
+        "id": "SCRAPING02"
+      }
+    }
+  },
+  "new": {
+    "scraping": {
+      "scraping_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /batch/scrape/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

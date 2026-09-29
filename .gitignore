@@ -1,0 +1,40 @@
+# Local config / secrets
+*.local.*
+*.local
+
+# Dependencies (no trailing slash: also ignores node_modules SYMLINKS, e.g.
+# ts/node_modules -> shared tree, which a dir-only rule leaves tracked)
+node_modules
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+
+# Editor
+*~
+*.swp
+
+# Submission hygiene: local credentials and generator caches are not source.
+.env
+.env.*
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+.jostraca/
+*.tsbuildinfo
+*.tgz
+coverage/
+
+# Historical diagnostic output, retained locally.
+/.sdk/apidef-warnings.txt
+
+# Standalone apidef CLI output; npm run generate uses the unprefixed model.
+# Keep both guide entry files; these duplicate model outputs are regenerated.
+/.sdk/model/api/firecrawl-*.aontu
+/.sdk/model/entity/firecrawl-*.aontu
+/.sdk/model/flow/firecrawl-*.aontu

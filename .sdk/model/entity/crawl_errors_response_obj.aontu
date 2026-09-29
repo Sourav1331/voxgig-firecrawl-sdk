@@ -1,0 +1,145 @@
+# Entity: crawl_errors_response_obj
+
+main: kit: entity: crawl_errors_response_obj: {
+
+  alias: field: {}
+
+  fields: {
+    error: {
+      h: "Error"
+      n: "error"
+      r: false
+      sh: "Error message"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    timestamp: {
+      h: "Timestamp"
+      n: "timestamp"
+      r: false
+      sh: "ISO timestamp of failure"
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "Scraped URL"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "crawl_errors_response_obj"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /crawl/{id}/errors"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/crawl/{id}/errors"
+          q: {
+            "$action": "errors"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "crawl"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "errors"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.errors`"
+          }
+        }
+        {
+          co: {
+            id: "GET /batch/scrape/{id}/errors"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "scrape_id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/batch/scrape/{id}/errors"
+          q: {
+            exist: [
+              "scrape_id"
+            ]
+          }
+          r: {
+            param: {
+              id: "scrape_id"
+            }
+          }
+          s: [
+            {
+              lit: "batch"
+            }
+            {
+              lit: "scrape"
+            }
+            {
+              var: "scrape_id"
+            }
+            {
+              lit: "errors"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.errors`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.scrape")]
+  ]
+
+}

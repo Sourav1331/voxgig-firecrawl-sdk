@@ -1,0 +1,125 @@
+# Entity: search
+
+main: kit: entity: search: {
+
+  alias: field: {}
+
+  fields: {
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      sh: "The search results."
+      t: "`$OBJECT`"
+    }
+    ignoreInvalidURLs: {
+      h: "Ignore Invalid Ur Ls"
+      n: "ignoreInvalidURLs"
+      r: false
+      sh: "Excludes URLs from the search results that are invalid for other Firecrawl endpoints."
+      t: "`$BOOLEAN`"
+    }
+    limit: {
+      h: "Limit"
+      n: "limit"
+      r: false
+      sh: "Maximum number of results to return"
+      t: "`$INTEGER`"
+    }
+    location: {
+      h: "Location"
+      n: "location"
+      r: false
+      sh: "Location parameter for search results"
+      t: "`$STRING`"
+    }
+    query: {
+      h: "Query"
+      n: "query"
+      r: true
+      sh: "The search query"
+      t: "`$STRING`"
+    }
+    scrapeOptions: {
+      h: "Scrape Options"
+      n: "scrapeOptions"
+      r: false
+      sh: "Options for scraping search results"
+      t: "`$ANY`"
+      union: {
+        branches: 9
+        count: 2
+        depth: 5
+      }
+    }
+    sources: {
+      h: "Sources"
+      n: "sources"
+      r: false
+      sh: "Sources to search."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 1
+      }
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    tbs: {
+      h: "Tbs"
+      n: "tbs"
+      r: false
+      sh: "Time-based search parameter."
+      t: "`$STRING`"
+    }
+    timeout: {
+      h: "Timeout"
+      n: "timeout"
+      r: false
+      sh: "Timeout in milliseconds"
+      t: "`$INTEGER`"
+    }
+    warning: {
+      h: "Warning"
+      n: "warning"
+      r: false
+      sh: "Warning message if any issues occurred"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "search"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /search"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/search"
+          s: [
+            {
+              lit: "search"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

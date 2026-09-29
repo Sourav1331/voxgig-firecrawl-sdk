@@ -1,0 +1,231 @@
+# Entity: billing
+
+main: kit: entity: billing: {
+
+  alias: field: {}
+
+  fields: {
+    apiKey: {
+      h: "Api Key"
+      n: "apiKey"
+      r: false
+      sh: "Name of the API key used for the billing period."
+      t: "`$STRING`"
+    }
+    billingPeriodEnd: {
+      fo: "date-time"
+      h: "Billing Period End"
+      n: "billingPeriodEnd"
+      r: false
+      sh: "End date of the billing period."
+      t: "`$STRING`"
+    }
+    billingPeriodStart: {
+      fo: "date-time"
+      h: "Billing Period Start"
+      n: "billingPeriodStart"
+      r: false
+      sh: "Start date of the billing period."
+      t: "`$STRING`"
+    }
+    endDate: {
+      fo: "date-time"
+      h: "End Date"
+      n: "endDate"
+      r: false
+      sh: "End date of the billing period"
+      t: "`$STRING`"
+    }
+    planCredits: {
+      h: "Plan Credits"
+      n: "planCredits"
+      r: false
+      sh: "Number of credits in the plan."
+      t: "`$NUMBER`"
+    }
+    planTokens: {
+      h: "Plan Tokens"
+      n: "planTokens"
+      r: false
+      sh: "Number of tokens in the plan."
+      t: "`$NUMBER`"
+    }
+    remainingCredits: {
+      h: "Remaining Credits"
+      n: "remainingCredits"
+      r: false
+      sh: "Number of credits remaining for the team"
+      t: "`$NUMBER`"
+    }
+    remainingTokens: {
+      h: "Remaining Tokens"
+      n: "remainingTokens"
+      r: false
+      sh: "Number of tokens remaining for the team"
+      t: "`$NUMBER`"
+    }
+    startDate: {
+      fo: "date-time"
+      h: "Start Date"
+      n: "startDate"
+      r: false
+      sh: "Start date of the billing period"
+      t: "`$STRING`"
+    }
+    totalCredits: {
+      h: "Total Credits"
+      n: "totalCredits"
+      r: false
+      sh: "Total number of credits used in the billing period"
+      t: "`$INTEGER`"
+    }
+    totalTokens: {
+      h: "Total Tokens"
+      n: "totalTokens"
+      r: false
+      sh: "Total number of tokens used in the billing period"
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "billing"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /team/credit-usage/historical"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: false
+                k: "query"
+                n: "by_api_key"
+                or: "byApiKey"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/team/credit-usage/historical"
+          q: {
+            exist: [
+              "by_api_key"
+            ]
+          }
+          s: [
+            {
+              lit: "team"
+            }
+            {
+              lit: "credit-usage"
+            }
+            {
+              lit: "historical"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.periods`"
+          }
+        }
+        {
+          co: {
+            id: "GET /team/token-usage/historical"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: false
+                k: "query"
+                n: "by_api_key"
+                or: "byApiKey"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/team/token-usage/historical"
+          q: {
+            exist: [
+              "by_api_key"
+            ]
+          }
+          s: [
+            {
+              lit: "team"
+            }
+            {
+              lit: "token-usage"
+            }
+            {
+              lit: "historical"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.periods`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /team/credit-usage"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/team/credit-usage"
+          s: [
+            {
+              lit: "team"
+            }
+            {
+              lit: "credit-usage"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /team/token-usage"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/team/token-usage"
+          s: [
+            {
+              lit: "team"
+            }
+            {
+              lit: "token-usage"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

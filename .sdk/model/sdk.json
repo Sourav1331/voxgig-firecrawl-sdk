@@ -1,0 +1,2410 @@
+{
+  "def": "firecrawl-openapi.json",
+  "main": {
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        },
+        "repr": "auto"
+      },
+      "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "github-pages": {
+            "active": false,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "github-pages",
+            "name": "github-pages",
+            "origname": "",
+            "output": {
+              "path": "docs"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          },
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
+      "entity": {
+        "batch_scrape_status_response_obj": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "completed": {
+              "a": true,
+              "h": "Completed",
+              "n": "completed",
+              "r": false,
+              "sh": "The number of pages that have been successfully scraped.",
+              "t": "`$INTEGER`"
+            },
+            "creditsUsed": {
+              "a": true,
+              "h": "Credits Used",
+              "n": "creditsUsed",
+              "r": false,
+              "sh": "The number of credits used for the batch scrape.",
+              "t": "`$INTEGER`"
+            },
+            "data": {
+              "a": true,
+              "h": "Data",
+              "n": "data",
+              "r": false,
+              "sh": "The data of the batch scrape.",
+              "t": "`$ARRAY`"
+            },
+            "expiresAt": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Expires At",
+              "n": "expiresAt",
+              "r": false,
+              "sh": "The date and time when the batch scrape will expire.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "invalidURLs": {
+              "a": true,
+              "h": "Invalid Ur Ls",
+              "n": "invalidURLs",
+              "r": false,
+              "sh": "If ignoreInvalidURLs is true, this is an array containing the invalid URLs that were specified in the request.",
+              "t": "`$ARRAY`"
+            },
+            "next": {
+              "a": true,
+              "h": "Next",
+              "n": "next",
+              "r": false,
+              "sh": "The URL to retrieve the next 10MB of data.",
+              "t": "`$STRING`"
+            },
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": false,
+              "sh": "The current status of the batch scrape.",
+              "t": "`$STRING`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "total": {
+              "a": true,
+              "h": "Total",
+              "n": "total",
+              "r": false,
+              "sh": "The total number of pages that were attempted to be scraped.",
+              "t": "`$INTEGER`"
+            },
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "batch_scrape_status_response_obj",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /batch/scrape",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/batch/scrape",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "batch"
+                    },
+                    {
+                      "lit": "scrape"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /batch/scrape/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/batch/scrape/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "batch"
+                    },
+                    {
+                      "lit": "scrape"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "billing": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "apiKey": {
+              "a": true,
+              "h": "Api Key",
+              "n": "apiKey",
+              "r": false,
+              "sh": "Name of the API key used for the billing period.",
+              "t": "`$STRING`"
+            },
+            "billingPeriodEnd": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Billing Period End",
+              "n": "billingPeriodEnd",
+              "r": false,
+              "sh": "End date of the billing period.",
+              "t": "`$STRING`"
+            },
+            "billingPeriodStart": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Billing Period Start",
+              "n": "billingPeriodStart",
+              "r": false,
+              "sh": "Start date of the billing period.",
+              "t": "`$STRING`"
+            },
+            "endDate": {
+              "a": true,
+              "fo": "date-time",
+              "h": "End Date",
+              "n": "endDate",
+              "r": false,
+              "sh": "End date of the billing period",
+              "t": "`$STRING`"
+            },
+            "planCredits": {
+              "a": true,
+              "h": "Plan Credits",
+              "n": "planCredits",
+              "r": false,
+              "sh": "Number of credits in the plan.",
+              "t": "`$NUMBER`"
+            },
+            "planTokens": {
+              "a": true,
+              "h": "Plan Tokens",
+              "n": "planTokens",
+              "r": false,
+              "sh": "Number of tokens in the plan.",
+              "t": "`$NUMBER`"
+            },
+            "remainingCredits": {
+              "a": true,
+              "h": "Remaining Credits",
+              "n": "remainingCredits",
+              "r": false,
+              "sh": "Number of credits remaining for the team",
+              "t": "`$NUMBER`"
+            },
+            "remainingTokens": {
+              "a": true,
+              "h": "Remaining Tokens",
+              "n": "remainingTokens",
+              "r": false,
+              "sh": "Number of tokens remaining for the team",
+              "t": "`$NUMBER`"
+            },
+            "startDate": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Start Date",
+              "n": "startDate",
+              "r": false,
+              "sh": "Start date of the billing period",
+              "t": "`$STRING`"
+            },
+            "totalCredits": {
+              "a": true,
+              "h": "Total Credits",
+              "n": "totalCredits",
+              "r": false,
+              "sh": "Total number of credits used in the billing period",
+              "t": "`$INTEGER`"
+            },
+            "totalTokens": {
+              "a": true,
+              "h": "Total Tokens",
+              "n": "totalTokens",
+              "r": false,
+              "sh": "Total number of tokens used in the billing period",
+              "t": "`$INTEGER`"
+            }
+          },
+          "name": "billing",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /team/credit-usage/historical",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "by_api_key",
+                        "or": "byApiKey",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/team/credit-usage/historical",
+                  "q": {
+                    "exist": [
+                      "by_api_key"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "team"
+                    },
+                    {
+                      "lit": "credit-usage"
+                    },
+                    {
+                      "lit": "historical"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.periods`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /team/token-usage/historical",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "by_api_key",
+                        "or": "byApiKey",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/team/token-usage/historical",
+                  "q": {
+                    "exist": [
+                      "by_api_key"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "team"
+                    },
+                    {
+                      "lit": "token-usage"
+                    },
+                    {
+                      "lit": "historical"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.periods`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /team/credit-usage",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/team/credit-usage",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "team"
+                    },
+                    {
+                      "lit": "credit-usage"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /team/token-usage",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/team/token-usage",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "team"
+                    },
+                    {
+                      "lit": "token-usage"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "crawl": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "allowExternalLinks": {
+              "a": true,
+              "h": "Allow External Links",
+              "n": "allowExternalLinks",
+              "r": false,
+              "sh": "Allows the crawler to follow links to external websites.",
+              "t": "`$BOOLEAN`"
+            },
+            "allowSubdomains": {
+              "a": true,
+              "h": "Allow Subdomains",
+              "n": "allowSubdomains",
+              "r": false,
+              "sh": "Allows the crawler to follow links to subdomains of the main domain.",
+              "t": "`$BOOLEAN`"
+            },
+            "completed": {
+              "a": true,
+              "h": "Completed",
+              "n": "completed",
+              "r": false,
+              "sh": "The number of pages that have been successfully crawled.",
+              "t": "`$INTEGER`"
+            },
+            "crawlEntireDomain": {
+              "a": true,
+              "h": "Crawl Entire Domain",
+              "n": "crawlEntireDomain",
+              "r": false,
+              "sh": "Allows the crawler to follow internal links to sibling or parent URLs, not just child paths.",
+              "t": "`$BOOLEAN`"
+            },
+            "creditsUsed": {
+              "a": true,
+              "h": "Credits Used",
+              "n": "creditsUsed",
+              "r": false,
+              "sh": "The number of credits used for the crawl.",
+              "t": "`$INTEGER`"
+            },
+            "data": {
+              "a": true,
+              "h": "Data",
+              "n": "data",
+              "r": false,
+              "sh": "The data of the crawl.",
+              "t": "`$ARRAY`"
+            },
+            "delay": {
+              "a": true,
+              "h": "Delay",
+              "n": "delay",
+              "r": false,
+              "sh": "Delay in seconds between scrapes.",
+              "t": "`$NUMBER`"
+            },
+            "excludePaths": {
+              "a": true,
+              "h": "Exclude Paths",
+              "n": "excludePaths",
+              "r": false,
+              "sh": "URL pathname regex patterns that exclude matching URLs from the crawl.",
+              "t": "`$ARRAY`"
+            },
+            "expiresAt": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Expires At",
+              "n": "expiresAt",
+              "r": false,
+              "sh": "The date and time when the crawl will expire.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "ignoreQueryParameters": {
+              "a": true,
+              "h": "Ignore Query Parameters",
+              "n": "ignoreQueryParameters",
+              "r": false,
+              "sh": "Do not re-scrape the same path with different (or none) query parameters",
+              "t": "`$BOOLEAN`"
+            },
+            "includePaths": {
+              "a": true,
+              "h": "Include Paths",
+              "n": "includePaths",
+              "r": false,
+              "sh": "URL pathname regex patterns that include matching URLs in the crawl.",
+              "t": "`$ARRAY`"
+            },
+            "limit": {
+              "a": true,
+              "h": "Limit",
+              "n": "limit",
+              "r": false,
+              "sh": "Maximum number of pages to crawl.",
+              "t": "`$INTEGER`"
+            },
+            "maxConcurrency": {
+              "a": true,
+              "h": "Max Concurrency",
+              "n": "maxConcurrency",
+              "r": false,
+              "sh": "Maximum number of concurrent scrapes.",
+              "t": "`$INTEGER`"
+            },
+            "maxDiscoveryDepth": {
+              "a": true,
+              "h": "Max Discovery Depth",
+              "n": "maxDiscoveryDepth",
+              "r": false,
+              "sh": "Maximum depth to crawl based on discovery order.",
+              "t": "`$INTEGER`"
+            },
+            "next": {
+              "a": true,
+              "h": "Next",
+              "n": "next",
+              "r": false,
+              "sh": "The URL to retrieve the next 10MB of data.",
+              "t": "`$STRING`"
+            },
+            "prompt": {
+              "a": true,
+              "h": "Prompt",
+              "n": "prompt",
+              "r": false,
+              "sh": "A prompt to use to generate the crawler options (all the parameters below) from natural language.",
+              "t": "`$STRING`"
+            },
+            "scrapeOptions": {
+              "a": true,
+              "h": "Scrape Options",
+              "n": "scrapeOptions",
+              "r": false,
+              "t": "`$OBJECT`",
+              "union": {
+                "branches": 9,
+                "count": 2,
+                "depth": 3
+              }
+            },
+            "sitemap": {
+              "a": true,
+              "h": "Sitemap",
+              "n": "sitemap",
+              "r": false,
+              "sh": "Sitemap mode when crawling.",
+              "t": "`$STRING`"
+            },
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": false,
+              "sh": "The current status of the crawl.",
+              "t": "`$STRING`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "total": {
+              "a": true,
+              "h": "Total",
+              "n": "total",
+              "r": false,
+              "sh": "The total number of pages that were attempted to be crawled.",
+              "t": "`$INTEGER`"
+            },
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "op": {
+                "create": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "r": false,
+              "sh": "The base URL to start crawling from",
+              "t": "`$STRING`"
+            },
+            "webhook": {
+              "a": true,
+              "h": "Webhook",
+              "n": "webhook",
+              "r": true,
+              "sh": "A webhook specification object.",
+              "t": "`$OBJECT`"
+            },
+            "zeroDataRetention": {
+              "a": true,
+              "h": "Zero Data Retention",
+              "n": "zeroDataRetention",
+              "r": false,
+              "sh": "If true, this will enable zero data retention for this crawl.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "crawl",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /crawl",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/crawl",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "crawl"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /crawl/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/crawl/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "crawl"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /crawl/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/crawl/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "crawl"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "crawl_errors_response_obj": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "error": {
+              "a": true,
+              "h": "Error",
+              "n": "error",
+              "r": false,
+              "sh": "Error message",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "timestamp": {
+              "a": true,
+              "h": "Timestamp",
+              "n": "timestamp",
+              "r": false,
+              "sh": "ISO timestamp of failure",
+              "t": "`$STRING`"
+            },
+            "url": {
+              "a": true,
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "Scraped URL",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "crawl_errors_response_obj",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /crawl/{id}/errors",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/crawl/{id}/errors",
+                  "q": {
+                    "$action": "errors",
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "crawl"
+                    },
+                    {
+                      "var": "id"
+                    },
+                    {
+                      "lit": "errors"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.errors`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /batch/scrape/{id}/errors",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "scrape_id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/batch/scrape/{id}/errors",
+                  "q": {
+                    "exist": [
+                      "scrape_id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "id": "scrape_id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "batch"
+                    },
+                    {
+                      "lit": "scrape"
+                    },
+                    {
+                      "var": "scrape_id"
+                    },
+                    {
+                      "lit": "errors"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.errors`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.scrape"
+              ]
+            ]
+          }
+        },
+        "crawling": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "id": {
+              "a": true,
+              "fo": "uuid",
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "The unique identifier of the crawl",
+              "t": "`$STRING`"
+            },
+            "options": {
+              "a": true,
+              "h": "Options",
+              "n": "options",
+              "r": true,
+              "sh": "The crawler options used for this crawl",
+              "t": "`$OBJECT`",
+              "union": {
+                "branches": 9,
+                "count": 2,
+                "depth": 5
+              }
+            },
+            "teamId": {
+              "a": true,
+              "h": "Team Id",
+              "n": "teamId",
+              "r": true,
+              "sh": "The ID of the team that owns the crawl",
+              "t": "`$STRING`"
+            },
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": true,
+              "sh": "The origin URL of the crawl",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "crawling",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /crawl/active",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/crawl/active",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "crawl"
+                    },
+                    {
+                      "lit": "active"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.crawls`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "extract": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "data": {
+              "a": true,
+              "h": "Data",
+              "n": "data",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "enableWebSearch": {
+              "a": true,
+              "h": "Enable Web Search",
+              "n": "enableWebSearch",
+              "r": false,
+              "sh": "When true, the extraction will use web search to find additional data",
+              "t": "`$BOOLEAN`"
+            },
+            "expiresAt": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Expires At",
+              "n": "expiresAt",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "ignoreInvalidURLs": {
+              "a": true,
+              "h": "Ignore Invalid Ur Ls",
+              "n": "ignoreInvalidURLs",
+              "r": false,
+              "sh": "If invalid URLs are specified in the urls array, they will be ignored.",
+              "t": "`$BOOLEAN`"
+            },
+            "ignoreSitemap": {
+              "a": true,
+              "h": "Ignore Sitemap",
+              "n": "ignoreSitemap",
+              "r": false,
+              "sh": "When true, sitemap.xml files will be ignored during website scanning",
+              "t": "`$BOOLEAN`"
+            },
+            "includeSubdomains": {
+              "a": true,
+              "h": "Include Subdomains",
+              "n": "includeSubdomains",
+              "r": false,
+              "sh": "When true, subdomains of the provided URLs will also be scanned",
+              "t": "`$BOOLEAN`"
+            },
+            "invalidURLs": {
+              "a": true,
+              "h": "Invalid Ur Ls",
+              "n": "invalidURLs",
+              "r": false,
+              "sh": "If ignoreInvalidURLs is true, this is an array containing the invalid URLs that were specified in the request.",
+              "t": "`$ARRAY`"
+            },
+            "prompt": {
+              "a": true,
+              "h": "Prompt",
+              "n": "prompt",
+              "r": false,
+              "sh": "Prompt to guide the extraction process",
+              "t": "`$STRING`"
+            },
+            "schema": {
+              "a": true,
+              "h": "Schema",
+              "n": "schema",
+              "r": false,
+              "sh": "Schema to define the structure of the extracted data.",
+              "t": "`$OBJECT`"
+            },
+            "scrapeOptions": {
+              "a": true,
+              "h": "Scrape Options",
+              "n": "scrapeOptions",
+              "r": false,
+              "t": "`$OBJECT`",
+              "union": {
+                "branches": 9,
+                "count": 2,
+                "depth": 3
+              }
+            },
+            "showSources": {
+              "a": true,
+              "h": "Show Sources",
+              "n": "showSources",
+              "r": false,
+              "sh": "When true, the sources used to extract the data will be included in the response as `sources` key",
+              "t": "`$BOOLEAN`"
+            },
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": false,
+              "sh": "The current status of the extract job",
+              "t": "`$STRING`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "tokensUsed": {
+              "a": true,
+              "h": "Tokens Used",
+              "n": "tokensUsed",
+              "r": false,
+              "sh": "The number of tokens used by the extract job.",
+              "t": "`$INTEGER`"
+            },
+            "urls": {
+              "a": true,
+              "h": "Urls",
+              "n": "urls",
+              "r": true,
+              "t": "`$ARRAY`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "extract",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /extract",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/extract",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "extract"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /extract/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/extract/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "extract"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "map": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "ignoreQueryParameters": {
+              "a": true,
+              "h": "Ignore Query Parameters",
+              "n": "ignoreQueryParameters",
+              "r": false,
+              "sh": "Do not return URLs with query parameters",
+              "t": "`$BOOLEAN`"
+            },
+            "includeSubdomains": {
+              "a": true,
+              "h": "Include Subdomains",
+              "n": "includeSubdomains",
+              "r": false,
+              "sh": "Include subdomains of the website",
+              "t": "`$BOOLEAN`"
+            },
+            "limit": {
+              "a": true,
+              "h": "Limit",
+              "n": "limit",
+              "r": false,
+              "sh": "Maximum number of links to return",
+              "t": "`$INTEGER`"
+            },
+            "links": {
+              "a": true,
+              "h": "Links",
+              "n": "links",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "search": {
+              "a": true,
+              "h": "Search",
+              "n": "search",
+              "r": false,
+              "sh": "Search query to use for mapping.",
+              "t": "`$STRING`"
+            },
+            "sitemap": {
+              "a": true,
+              "h": "Sitemap",
+              "n": "sitemap",
+              "r": false,
+              "sh": "Sitemap mode when mapping.",
+              "t": "`$STRING`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "timeout": {
+              "a": true,
+              "h": "Timeout",
+              "n": "timeout",
+              "r": false,
+              "sh": "Timeout in milliseconds.",
+              "t": "`$INTEGER`"
+            },
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": true,
+              "sh": "The base URL to start crawling from",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "map",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /map",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/map",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "map"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "scrape": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "actions": {
+              "a": true,
+              "h": "Actions",
+              "n": "actions",
+              "r": false,
+              "sh": "Results of the actions specified in the `actions` parameter.",
+              "t": "`$OBJECT`"
+            },
+            "changeTracking": {
+              "a": true,
+              "h": "Change Tracking",
+              "n": "changeTracking",
+              "r": false,
+              "sh": "Change tracking information if `changeTracking` is in `formats`.",
+              "t": "`$OBJECT`"
+            },
+            "html": {
+              "a": true,
+              "h": "Html",
+              "n": "html",
+              "r": false,
+              "sh": "HTML version of the content on page if `html` is in `formats`",
+              "t": "`$STRING`"
+            },
+            "links": {
+              "a": true,
+              "h": "Links",
+              "n": "links",
+              "r": false,
+              "sh": "List of links on the page if `links` is in `formats`",
+              "t": "`$ARRAY`"
+            },
+            "markdown": {
+              "a": true,
+              "h": "Markdown",
+              "n": "markdown",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "metadata": {
+              "a": true,
+              "h": "Metadata",
+              "n": "metadata",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "rawHtml": {
+              "a": true,
+              "h": "Raw Html",
+              "n": "rawHtml",
+              "r": false,
+              "sh": "Raw HTML content of the page if `rawHtml` is in `formats`",
+              "t": "`$STRING`"
+            },
+            "screenshot": {
+              "a": true,
+              "h": "Screenshot",
+              "n": "screenshot",
+              "r": false,
+              "sh": "Screenshot of the page if `screenshot` is in `formats`",
+              "t": "`$STRING`"
+            },
+            "summary": {
+              "a": true,
+              "h": "Summary",
+              "n": "summary",
+              "r": false,
+              "sh": "Summary of the page if `summary` is in `formats`",
+              "t": "`$STRING`"
+            },
+            "warning": {
+              "a": true,
+              "h": "Warning",
+              "n": "warning",
+              "r": false,
+              "sh": "Can be displayed when using LLM Extraction.",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "scrape",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /scrape",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/scrape",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "scrape"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "scraping": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "scraping",
+          "op": {
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /batch/scrape/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/batch/scrape/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "batch"
+                    },
+                    {
+                      "lit": "scrape"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "search": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "data": {
+              "a": true,
+              "h": "Data",
+              "n": "data",
+              "r": false,
+              "sh": "The search results.",
+              "t": "`$OBJECT`"
+            },
+            "ignoreInvalidURLs": {
+              "a": true,
+              "h": "Ignore Invalid Ur Ls",
+              "n": "ignoreInvalidURLs",
+              "r": false,
+              "sh": "Excludes URLs from the search results that are invalid for other Firecrawl endpoints.",
+              "t": "`$BOOLEAN`"
+            },
+            "limit": {
+              "a": true,
+              "h": "Limit",
+              "n": "limit",
+              "r": false,
+              "sh": "Maximum number of results to return",
+              "t": "`$INTEGER`"
+            },
+            "location": {
+              "a": true,
+              "h": "Location",
+              "n": "location",
+              "r": false,
+              "sh": "Location parameter for search results",
+              "t": "`$STRING`"
+            },
+            "query": {
+              "a": true,
+              "h": "Query",
+              "n": "query",
+              "r": true,
+              "sh": "The search query",
+              "t": "`$STRING`"
+            },
+            "scrapeOptions": {
+              "a": true,
+              "h": "Scrape Options",
+              "n": "scrapeOptions",
+              "r": false,
+              "sh": "Options for scraping search results",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 9,
+                "count": 2,
+                "depth": 5
+              }
+            },
+            "sources": {
+              "a": true,
+              "h": "Sources",
+              "n": "sources",
+              "r": false,
+              "sh": "Sources to search.",
+              "t": "`$ARRAY`",
+              "union": {
+                "branches": 3,
+                "count": 1,
+                "depth": 1
+              }
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "tbs": {
+              "a": true,
+              "h": "Tbs",
+              "n": "tbs",
+              "r": false,
+              "sh": "Time-based search parameter.",
+              "t": "`$STRING`"
+            },
+            "timeout": {
+              "a": true,
+              "h": "Timeout",
+              "n": "timeout",
+              "r": false,
+              "sh": "Timeout in milliseconds",
+              "t": "`$INTEGER`"
+            },
+            "warning": {
+              "a": true,
+              "h": "Warning",
+              "n": "warning",
+              "r": false,
+              "sh": "Warning message if any issues occurred",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "search",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /search",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/search",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "search"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
+          },
+          "description": "In-memory mock transport for testing without a live server",
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Test transport",
+          "transport": "base",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicBatchScrapeStatusResponseObjFlow": {
+          "active": true,
+          "entity": "batch_scrape_status_response_obj",
+          "key$": "BasicBatchScrapeStatusResponseObjFlow",
+          "kind": "basic",
+          "name": "BasicBatchScrapeStatusResponseObjFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "batch_scrape_status_response_obj_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "batch_scrape_status_response_obj_ref01",
+                "srcdatavar": "batch_scrape_status_response_obj_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "batch_scrape_status_response_obj01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-batch_scrape_status_response_obj_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicBillingFlow": {
+          "active": true,
+          "entity": "billing",
+          "key$": "BasicBillingFlow",
+          "kind": "basic",
+          "name": "BasicBillingFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "billing_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "billing_ref01",
+                "srcdatavar": "billing_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-billing_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicCrawlErrorsResponseObjFlow": {
+          "active": true,
+          "entity": "crawl_errors_response_obj",
+          "key$": "BasicCrawlErrorsResponseObjFlow",
+          "kind": "basic",
+          "name": "BasicCrawlErrorsResponseObjFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "scrape_id": "scrape01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "crawl_errors_response_obj_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicCrawlFlow": {
+          "active": true,
+          "entity": "crawl",
+          "key$": "BasicCrawlFlow",
+          "kind": "basic",
+          "name": "BasicCrawlFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "crawl_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "crawl_ref01",
+                "srcdatavar": "crawl_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "crawl01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-crawl_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "crawl_ref01",
+                "suffix": "_rm0"
+              },
+              "m": {
+                "id": "crawl01"
+              },
+              "o": "remove",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicCrawlingFlow": {
+          "active": true,
+          "entity": "crawling",
+          "key$": "BasicCrawlingFlow",
+          "kind": "basic",
+          "name": "BasicCrawlingFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "crawling_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicExtractFlow": {
+          "active": true,
+          "entity": "extract",
+          "key$": "BasicExtractFlow",
+          "kind": "basic",
+          "name": "BasicExtractFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "extract_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "extract_ref01",
+                "srcdatavar": "extract_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "extract01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-extract_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicMapFlow": {
+          "active": true,
+          "entity": "map",
+          "key$": "BasicMapFlow",
+          "kind": "basic",
+          "name": "BasicMapFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "map_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicScrapeFlow": {
+          "active": true,
+          "entity": "scrape",
+          "key$": "BasicScrapeFlow",
+          "kind": "basic",
+          "name": "BasicScrapeFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "scrape_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicScrapingFlow": {
+          "active": true,
+          "entity": "scraping",
+          "key$": "BasicScrapingFlow",
+          "kind": "basic",
+          "name": "BasicScrapingFlow",
+          "param": {},
+          "step": []
+        },
+        "BasicSearchFlow": {
+          "active": true,
+          "entity": "search",
+          "key$": "BasicSearchFlow",
+          "kind": "basic",
+          "name": "BasicSearchFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "search_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        }
+      },
+      "info": {
+        "contact": {
+          "email": "support@firecrawl.dev",
+          "name": "Firecrawl Support",
+          "url": "https://firecrawl.dev/support"
+        },
+        "description": "API for interacting with Firecrawl services to perform web scraping and crawling tasks.",
+        "security": {
+          "in": "header",
+          "name": "Authorization",
+          "prefix": "Bearer",
+          "scheme": "bearerAuth",
+          "type": "http"
+        },
+        "servers": [
+          {
+            "url": "https://api.firecrawl.dev/v2"
+          }
+        ],
+        "summary": "API for interacting with Firecrawl services to perform web scraping and crawling tasks.",
+        "title": "Firecrawl API",
+        "version": "v2",
+        "website": "https://firecrawl.dev"
+      },
+      "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "in": "",
+          "name": "",
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
+      "phase": {
+        "build": {
+          "active": true
+        },
+        "top": {
+          "active": true
+        }
+      },
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
+      "target": {
+        "ts": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "firecrawl",
+            "package": "",
+            "path": ""
+          },
+          "name": "ts",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
+          "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": true
+        }
+      }
+    }
+  },
+  "name": "firecrawl",
+  "origin": "voxgig-sdk"
+}

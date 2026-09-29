@@ -1,0 +1,13 @@
+# Guide
+
+@"@voxgig/apidef/model/guide.aontu"
+
+@"./base-guide.aontu"
+
+# Firecrawl wraps failed scrape records in errors, not in data.
+guide: entity: crawl_errors_response_obj: path: {
+  "/crawl/{id}/errors": op: list: transform: res: "`body.errors`"
+  "/batch/scrape/{id}/errors": op: list: transform: res: "`body.errors`"
+}
+
+

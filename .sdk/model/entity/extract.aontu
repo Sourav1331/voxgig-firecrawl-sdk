@@ -1,0 +1,198 @@
+# Entity: extract
+
+main: kit: entity: extract: {
+
+  alias: field: {}
+
+  fields: {
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      t: "`$OBJECT`"
+    }
+    enableWebSearch: {
+      h: "Enable Web Search"
+      n: "enableWebSearch"
+      r: false
+      sh: "When true, the extraction will use web search to find additional data"
+      t: "`$BOOLEAN`"
+    }
+    expiresAt: {
+      fo: "date-time"
+      h: "Expires At"
+      n: "expiresAt"
+      r: false
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    ignoreInvalidURLs: {
+      h: "Ignore Invalid Ur Ls"
+      n: "ignoreInvalidURLs"
+      r: false
+      sh: "If invalid URLs are specified in the urls array, they will be ignored."
+      t: "`$BOOLEAN`"
+    }
+    ignoreSitemap: {
+      h: "Ignore Sitemap"
+      n: "ignoreSitemap"
+      r: false
+      sh: "When true, sitemap.xml files will be ignored during website scanning"
+      t: "`$BOOLEAN`"
+    }
+    includeSubdomains: {
+      h: "Include Subdomains"
+      n: "includeSubdomains"
+      r: false
+      sh: "When true, subdomains of the provided URLs will also be scanned"
+      t: "`$BOOLEAN`"
+    }
+    invalidURLs: {
+      h: "Invalid Ur Ls"
+      n: "invalidURLs"
+      r: false
+      sh: "If ignoreInvalidURLs is true, this is an array containing the invalid URLs that were specified in the request."
+      t: "`$ARRAY`"
+    }
+    prompt: {
+      h: "Prompt"
+      n: "prompt"
+      r: false
+      sh: "Prompt to guide the extraction process"
+      t: "`$STRING`"
+    }
+    schema: {
+      h: "Schema"
+      n: "schema"
+      r: false
+      sh: "Schema to define the structure of the extracted data."
+      t: "`$OBJECT`"
+    }
+    scrapeOptions: {
+      h: "Scrape Options"
+      n: "scrapeOptions"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 9
+        count: 2
+        depth: 3
+      }
+    }
+    showSources: {
+      h: "Show Sources"
+      n: "showSources"
+      r: false
+      sh: "When true, the sources used to extract the data will be included in the response as `sources` key"
+      t: "`$BOOLEAN`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "The current status of the extract job"
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    tokensUsed: {
+      h: "Tokens Used"
+      n: "tokensUsed"
+      r: false
+      sh: "The number of tokens used by the extract job."
+      t: "`$INTEGER`"
+    }
+    urls: {
+      h: "Urls"
+      n: "urls"
+      r: true
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "extract"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /extract"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/extract"
+          s: [
+            {
+              lit: "extract"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /extract/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/extract/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "extract"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
